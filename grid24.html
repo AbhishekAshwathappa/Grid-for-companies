@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3x3 Grid</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+        td {
+            width: 50px;
+            height: 50px;
+            border: 1px solid black;
+            text-align: center;
+            vertical-align: middle;
+            color:red;
+            background-color:tranparent;
+        }
+    </style>
+</head>
+<body>
+
+
+
+<table id="grid">
+    <tr>
+        <td id="low-low">high</td>
+        <td id="low-medium">infosys</td>
+        <td id="low-high">amazon</td>
+    </tr>
+    <tr>
+        <td id="medium-low">medium</td>
+        <td id="medium-medium">tcs</td>
+        <td id="medium-high">mahindra</td>
+    </tr>
+    <tr>
+        <td id="high-low">low</td>
+        <td id="high-medium">medium</td>
+        <td id="high-high">high</td>
+    </tr>
+</table>
+
+<script>
+
+    // JavaScript logic can go here
+
+
+const labels = ["low", "medium", "high"];
+
+// Create a 3x3 grid
+const grid = [];
+for (let i = 0; i < 3; i++) {
+    const row = [];
+    for (let j = 0; j < 3; j++) {
+        // Calculate label index based on row and column
+        const labelIndex = (i * 3 + j) % labels.length;
+        row.push(labels[labelIndex]);
+    }
+    grid.push(row);
+}
+
+// Print the grid
+for (let i = 0; i < grid.length; i++) {
+    console.log(grid[i].join(' | '));
+}
+</script>
+
+</body>
+</html>
